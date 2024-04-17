@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせフォーム</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<button onclick="redirectTopPage()">Back</button>
+
+<h2>お問い合わせフォーム</h2>
+
+<form id="contactForm">
+  <label for="request">ご要望・ご意見:</label><br>
+  <textarea id="request" name="request" rows="4" cols="50"></textarea><br><br>
+  <input type="submit" value="送信">
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // フォームの通常の送信をキャンセル
+  
+  var formData = new FormData(this); // フォームデータを取得
+  
+  // フォームデータからテキストエリアの値を取得
+  var request = formData.get("request");
+  
+  // Google Apps ScriptのWebアプリケーションURLを指定
+  var url = "https://script.google.com/macros/s/Your_App_Script_ID/exec";
+  
+  // Google Apps ScriptにPOSTリクエストを送信
+  fetch(url, {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify({request: request})
+  })
+  .then(response => {
+    // リクエストが成功した場合の処理
+    alert("ご要望が送信されました。");
+    document.getElementById("contactForm").reset(); // フォームをリセット
+  })
+  .catch(error => {
+    // エラーが発生した場合の処理
+    alert("エラーが発生しました。もう一度お試しください。");
+  });
+});
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

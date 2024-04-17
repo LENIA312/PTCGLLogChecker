@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTCGLログチェッカーの使い方</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="redirectTopPage()">Back</button>
+    <div class="container">
+        <div class="header">
+            <h1>PTCGLログチェッカーの使い方</h1>
+        </div>
+        <div class="content">
+            <h3>バトルログを開きます</h3>
+            <img src="img/phase1.png" alt="サンプル画像">
+            <br>
+
+            <h3>バトルログををコピーします</h3>
+            <img src="img/phase2.png" alt="サンプル画像">
+            <br>
+
+            <h3>ログチェッカーの「Paste」ボタンを押します</h3>
+            <img src="img/phase3.png" alt="サンプル画像">
+            <br>
+
+            <h3>YourName」に自分の名前を入力します(空欄の場合は、先行が自分の名前になります)</h3>
+            <img src="img/phase4.png" alt="サンプル画像">
+            <br>
+
+            <h3>Apply」を押します</h3>
+            <img src="img/phase5.png" alt="サンプル画像">
+            <br>
+
+            <h3>表でログが表示され、自分のターンは緑色になります</h3>
+            <img src="img/phase6.png" alt="サンプル画像">
+            <br>
+
+            <h3>プルダウンから各フェーズの絞り込みも可能です</h3>
+            <img src="img/phase7.png" alt="サンプル画像">
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>
